@@ -1,9 +1,9 @@
 <form action="">
-		<select name="countries" ng-model="country" ng-change="division=null" id="countries" ng-options="c.id as c.name for c in countries">
+		<select class="btn btn-info" name="countries" ng-model="country" ng-change="division=null" id="countries" ng-options="c.id as c.name for c in countries">
 			<option value="">Seleccione un pais</option>
 		</select>
 
-		<select name="countries" ng-model="division" id="countries" ng-options="d.id as d.name for d in divisions | filter:country">
+		<select class="btn btn-info" name="countries" ng-model="division" id="countries" ng-options="d.id as d.name for d in divisions | filter:country">
 			<option value="">Seleccione una division</option>
 		</select>
 		<button class="btn btn-success" ng-click="select()">+</button>
@@ -13,8 +13,12 @@
 	<table class="table table">
 		
 		<tr>
-			Para : <button class="btn btn-info" ng-repeat="s in selecteds  track by $index" ng-click="delete($index)" >{{s}} x</button>	 <td></td>
+			Para : <button class="btn btn-info" ng-repeat="s in selecteds" ng-click="delete($index)" >{{s}} x</button>	 <td></td>
 		</tr>
-
 	</table>
+	<textarea name="" id="" cols="30" rows="10"></textarea>
+	<div class="center">
+		<button class="btn btn-success">Enviar</button>
+		<button class="btn btn">Limpiar</button>
+	</div>
 </form>

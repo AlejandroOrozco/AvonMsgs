@@ -56,8 +56,9 @@ angular.module('avonApp')
 
     $scope.select = function  () {
     	var item  = $scope.division? $scope.divisions[$scope.division-1].name  : $scope.countries[$scope.country-1].name;
-
-    	$scope.selecteds.push(item);
+      if ($scope.selecteds.toString().search(item)) {
+          $scope.selecteds.push(item);
+      };
     }
 
     $scope.delete = function  (index) {
